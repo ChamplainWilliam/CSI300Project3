@@ -8,10 +8,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device_width, initial-scale=1.0">
     <title>Twitter Clone</title>
-
+    <link type="text/css" href="../CSI300Project3/style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>LOG IN TO TWITTER USING YOUR USER ID</h1>    
+    <h1>LOG IN TO TWITTER WITH YOUR USER ID</h1>    
     <form action="timeline.php" method="POST">
         <select name="user_id">
             <option value="1">1</option>
