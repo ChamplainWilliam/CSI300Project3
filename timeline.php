@@ -22,10 +22,10 @@ $result = mysqli_query($link, $timeline_select);
 
 while($row = mysqli_fetch_assoc($result))
 {
-    echo "<tr><td class='labels'>Username </td><td class='data'>".$row['username']."</td></tr>";
-    echo "<tr><td class='labels'>Content:</td><td class='data'>".$row['content']."</td></tr>";
-    echo "<tr><td class='labels'>Tweet Time:</td><td class='data'>".$row['tweet_time']."</td></tr>";
-    echo "<tr><td class='labels'>TweetID:</td><td class='data'>".$row['tweetID']."</td></tr>";
+    echo "<tr><td class='labels'>Username </td><td class='data'>".$row['username']."</td></tr><br>";
+    echo "<tr><td class='labels'>Content:</td><td class='data'>".$row['content']."</td></tr><br>";
+    echo "<tr><td class='labels'>Tweet Time:</td><td class='data'>".$row['tweet_time']."</td></tr><br>";
+    echo "<tr><td class='labels'>TweetID:</td><td class='data'>".$row['tweetID']."</td></tr><br>";
 }
 ?>
 
