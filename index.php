@@ -1,3 +1,7 @@
+<?php
+    setcookie('user_id', $_POST['user_id'], time() + 86400);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,5 +25,13 @@
         </select>  
         <input type="submit" name="submit" value="submit">
     </form>
+    <p>1 is William Chen</p>
+    <p>2 is Jacky Zhang</p>
+    <p>3 is Dylan Pallatroni</p>
+    <p>4 is Irvin Vien</p>
+    <p>5 is James Zhang</p>
+    <p>6 is Frank Canovatchel</p>
+    <p>7 is Evan Lee</p>
+    <p>8 is John Cha</p>
 </body>
 </html>
