@@ -1,7 +1,3 @@
-<?php
-    setcookie('user_id', $_POST['user_id'], time() + 86400);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,26 +8,18 @@
 </head>
 <body>
     <h1>LOG IN TO TWITTER USING YOUR USER ID</h1>    
-    <form action="timeline.php" method="POST">
-        <select name="user_id">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
+    <form action="makeCookie.php" method="POST">
+        <select name="userID">
+            <option value="1">William Chen</option>
+            <option value="2">Jacky Zhang</option>
+            <option value="3">Dylan Pallatroni</option>
+            <option value="4">Irvin Vien</option>
+            <option value="5">James Zhang</option>
+            <option value="6">Frank Canovatchel</option>
+            <option value="7">Evan Lee</option>
+            <option value="8">John Cha</option>
         </select>  
         <input type="submit" name="submit" value="submit">
     </form>
-    <p>1 is William Chen</p>
-    <p>2 is Jacky Zhang</p>
-    <p>3 is Dylan Pallatroni</p>
-    <p>4 is Irvin Vien</p>
-    <p>5 is James Zhang</p>
-    <p>6 is Frank Canovatchel</p>
-    <p>7 is Evan Lee</p>
-    <p>8 is John Cha</p>
 </body>
 </html>
