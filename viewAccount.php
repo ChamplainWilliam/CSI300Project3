@@ -12,6 +12,12 @@ else {
 
 $userID = $_COOKIE["userID"];
 
+$followers_query = "select u.username from follow f join user u on f.followerID = u.userID where f.followedID = $userID";
+$followers_result = mysqli_query($link, $followers_query);
+
+$following_query = "select u.username from follow f join user u on f.followedId = u.userID where f.followerId = $userID";
+$following_result = mysqli_query($link, $following_query);
+
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +31,27 @@ $userID = $_COOKIE["userID"];
     <div class="navbar">
         <a href="timeline.php">Timeline</a> 
         <a href="viewAccount.php">View Account</a>
+        <a href="favorited.php">Favorited Tweets</a>
+        <a href="index.php">Log Out</a>
     </div>
 
-<?php
-
-?>
+    <h2>Followers:</h2>
+    <ul>
+        <?php
+        while ($follower = mysqli_fetch_assoc($followers_result))
+        {
+            echo "<li>" . $follower['username'] . "</li>";
+        }
+        ?>
+    </ul>
+    <h2>Following:</h2>
+    <ul>
+        <?php
+        while($following = mysqli_fetch_assoc($following_result))
+        {
+            echo "<li>" . $following["username"] . "</li>";
+        }
+        ?>
+    </ul>
+</body>
+</html>

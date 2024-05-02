@@ -30,8 +30,10 @@ $result = mysqli_query($link, $timeline_select);
 </head>
 <body>
     <div class="navbar">
+        <a href="timeline.php">Timeline</a> 
         <a href="viewAccount.php">View Account</a>
-        <a href="timeline.php">Timeline</a>
+        <a href="favorited.php">Favorited Tweets</a>
+        <a href="index.php">Log Out</a>
     </div>
         <div class ="tweetTable">
         <?php
