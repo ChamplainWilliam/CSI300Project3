@@ -32,6 +32,7 @@ $following_result = mysqli_query($link, $following_query);
         <a href="timeline.php">Timeline</a> 
         <a href="viewAccount.php">View Account</a>
         <a href="favorited.php">Favorited Tweets</a>
+        <a href="search.php">Search A User</a>
         <a href="index.php">Log Out</a>
     </div>
 
