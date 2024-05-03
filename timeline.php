@@ -15,30 +15,48 @@ $userID = $_COOKIE["userID"];
 $timeline_select = "select u.username, t.content, t.tweet_time, t.tweetID
 FROM tweet t
 JOIN user u ON t.userID = u.userID
-WHERE t.userID = 1
+WHERE t.userID = $userID
 ORDER BY t.tweet_time DESC";
 
 $result = mysqli_query($link, $timeline_select);
 
-while($row = mysqli_fetch_assoc($result))
-{
-    echo "<tr><td class='labels'>Username </td><td class='data'>".$row['username']."</td></tr><br>";
-    echo "<tr><td class='labels'>Content:</td><td class='data'>".$row['content']."</td></tr><br>";
-    echo "<tr><td class='labels'>Tweet Time:</td><td class='data'>".$row['tweet_time']."</td></tr><br>";
-    echo "<tr><td class='labels'>TweetID:</td><td class='data'>".$row['tweetID']."</td></tr><br>";
-}
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Timeline</title>
-    <link href="style.css"/>
+    <link href="style.css?v=2" rel="stylesheet" type="text/css"/>
     <meta charset="URF-8">
 </head>
 <body>
-    
+    <div class="navbar">
+        <a href="timeline.php">Timeline</a> 
+        <a href="viewAccount.php">View Account</a>
+        <a href="favorited.php">Favorited Tweets</a>
+        <a href="index.php">Log Out</a>
+    </div>
+        <div class ="tweetTable">
+        <?php
+        if (mysqli_num_rows($result) > 0) {
+        echo "<table>";
+        echo "<tr><th>Username</th><th>Content</th><th>Tweet Time</th><th>TweetID</th></tr>";
+        while($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>".$row['username']."</td>";
+            echo "<td>".$row['content']."</td>";
+            echo "<td>".$row['tweet_time']."</td>";
+            echo "<td>".$row['tweetID']."</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        }   
+        else {
+        echo "<p>No tweets found.</p>";
+        }
+        ?>
+
+    </div>
 </body>
 
 </html>
+
